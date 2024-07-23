@@ -1,0 +1,39 @@
+set number
+let g:netrw_keepdir=0
+
+syntax on
+colorscheme monokai
+
+" Pathogen Required:
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+set wrap linebreak nolist
+
+let NERDTreeShowHidden=1
+
+set scrolloff=999
+
+:ifont 1 14
+
+setlocal spell spelllang=en_us
+
+hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE guibg=#2d2e28 guifg=NONE
+set cursorline
+
+"let g:rainbow_active=1
+au FileType c,cpp,objc,objcpp,javascript,tex,python,vim call rainbow#load()
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm,js,jsx}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+let g:rainbow_guifgs = ['#fc4675', '#9b86ee', '#f98454', '#68d5e3', '#fdd154', '#9ad863']
+"let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+hi Comment ctermfg=242 ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+
+let g:airline_theme='wombat'
